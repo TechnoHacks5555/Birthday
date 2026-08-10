@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Inter", sans-serif;
+
+  --netflix-red: #e50914;
+  --bg: #141414;
+  --card: #181818;
+  --text: #ffffff;
+  --gray: #b3b3b3;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  color: white;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+img {
+  user-select: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.scrollbar-hide::-webkit-scrollbar{
+    display:none;
+}
+
+.scrollbar-hide{
+    scrollbar-width:none;
+}
