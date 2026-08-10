@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // Base path for GitHub Pages project site. Update to match your repo name.
   base: "/Birthday/",
   plugins: [
     react(),
