@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Play, Plus, ThumbsUp, X, Volume2, VolumeX } from "lucide-react";
+import { resolveAssetPath } from "../../utils/assetPath";
 
 const MovieDetailModal = ({ movie, onClose, onPlay }) => {
   const videoRef = useRef(null);
@@ -45,8 +46,8 @@ const MovieDetailModal = ({ movie, onClose, onPlay }) => {
           {movie.video ? (
             <video
               ref={videoRef}
-              src={movie.video}
-              poster={movie.image}
+              src={resolveAssetPath(movie.video)}
+              poster={resolveAssetPath(movie.image)}
               autoPlay
               loop
               muted={muted}
@@ -55,7 +56,7 @@ const MovieDetailModal = ({ movie, onClose, onPlay }) => {
             />
           ) : (
             <img
-              src={movie.image}
+              src={resolveAssetPath(movie.image)}
               alt={movie.title}
               className="h-full w-full object-cover"
             />

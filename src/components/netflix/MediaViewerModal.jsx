@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { X } from "lucide-react";
+import { resolveAssetPath } from "../../utils/assetPath";
 
 const MediaViewerModal = ({ movie, onClose }) => {
   const mediaRef = useRef(null);
@@ -50,11 +51,11 @@ const MediaViewerModal = ({ movie, onClose }) => {
 
       {hasVideo ? (
         // movie.video can be a local path ("/videos/clip.mp4") or a full
-        // Cloudinary URL — both are just strings to the <video> tag, no
-        // extra handling needed either way.
+        // Cloudinary URL — resolve local public paths through BASE_URL so the
+        // app still works when deployed under a GitHub Pages subpath.
         <video
           ref={mediaRef}
-          src={movie.video}
+          src={resolveAssetPath(movie.video)}
           autoPlay
           controls
           className="h-full w-full object-contain"
@@ -63,7 +64,7 @@ const MediaViewerModal = ({ movie, onClose }) => {
       ) : (
         <img
           ref={mediaRef}
-          src={movie.image}
+          src={resolveAssetPath(movie.image)}
           alt={movie.title}
           className="h-full w-full object-contain"
         />

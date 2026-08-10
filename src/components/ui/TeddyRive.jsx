@@ -5,7 +5,7 @@ import { useRive, useStateMachineInput } from "@rive-app/react-canvas";
 const STATE_MACHINE_NAME = "Login Machine";
 
 // TODO: put your .riv file at public/rive/login-teddy.riv, or update this path.
-const RIVE_SRC = "/intro/login-teddy.riv";
+const RIVE_SRC = `${import.meta.env.BASE_URL}intro/login-teddy.riv`;
 
 /**
  * Rive teddy bear used on the Splash password screen.

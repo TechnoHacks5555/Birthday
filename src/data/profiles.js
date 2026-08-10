@@ -2,7 +2,7 @@ const profiles = [
   {
     id: 1,
     name: "Shaili",
-    image: "/intro/shaili-profile.jpg",
+    image: "intro/shailiprofile.jpg",
   },
   {
     id: 2,

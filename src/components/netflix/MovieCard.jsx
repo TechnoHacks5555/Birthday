@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Play, Plus, ThumbsUp, ChevronDown } from "lucide-react";
+import { resolveAssetPath } from "../../utils/assetPath";
 
 const MovieCard = ({ movie, onInfo, onPlay, isFirst, isLast }) => {
   const [hovering, setHovering] = useState(false);
@@ -52,7 +53,7 @@ const MovieCard = ({ movie, onInfo, onPlay, isFirst, isLast }) => {
           </div>
         )}
         <img
-          src={movie.image}
+          src={resolveAssetPath(movie.image)}
           alt={movie.title}
           className="h-full w-full object-cover"
           onError={(e) => {

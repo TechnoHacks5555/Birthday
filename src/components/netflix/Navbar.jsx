@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Bell, Search, ChevronDown } from "lucide-react";
+import ROUTES from "../../constants/routes";
 
 const NAV_LINKS = ["Home", "TV Shows", "Movies", "New & Popular", "My List"];
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -27,7 +30,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between px-6 py-4 md:px-14 md:py-5">
         <div className="flex items-center gap-10">
           <img
-            src="/logos/netflix-nav-logo.svg"
+            src={`${import.meta.env.BASE_URL}logos/netflix-nav-logo.svg`}
             alt="Netflix"
             className="w-24 md:w-28"
             onError={(e) => {
@@ -59,7 +62,7 @@ const Navbar = () => {
             onMouseLeave={() => setMenuOpen(false)}
           >
             <img
-              src="/intro/shaili-profile.jpg"
+              src={`${import.meta.env.BASE_URL}intro/shailiprofile.jpg`}
               alt="Profile"
               className="w-9 rounded"
               onError={(e) => {
@@ -82,9 +85,13 @@ const Navbar = () => {
                   Account
                 </div>
                 <hr className="my-1 border-white/10" />
-                <div className="px-4 py-2 text-gray-300 hover:text-white">
+                <button
+                  type="button"
+                  onClick={() => navigate(ROUTES.PROFILE)}
+                  className="w-full text-left px-4 py-2 text-gray-300 hover:text-white"
+                >
                   Sign out
-                </div>
+                </button>
               </div>
             )}
           </div>

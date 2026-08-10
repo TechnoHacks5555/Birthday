@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { resolveAssetPath } from "../../utils/assetPath";
 
 const SmileyFace = () => (
   <svg viewBox="0 0 100 100" className="h-14 w-14 md:h-16 md:w-16">
@@ -43,7 +44,7 @@ const ProfileCard = ({ profile, onClick }) => {
       <div className="h-36 w-36 overflow-hidden rounded-md border-4 border-transparent shadow-lg transition-all duration-300 group-hover:border-white md:h-40 md:w-40">
         {profile.image ? (
           <img
-            src={profile.image}
+            src={resolveAssetPath(profile.image)}
             alt={profile.name}
             className="h-full w-full object-cover"
             onError={(e) => {

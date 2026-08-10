@@ -405,7 +405,7 @@ const Splash = () => {
             playsInline
             onEnded={() => navigate(ROUTES.PROFILE)}
           >
-            <source src="/intro/netflix-intro.mp4" type="video/mp4" />
+            <source src={`${import.meta.env.BASE_URL}intro/netflix-intro.mp4`} type="video/mp4" />
           </video>
         </motion.div>
       )}

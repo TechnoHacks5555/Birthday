@@ -42,7 +42,9 @@ const HeroBanner = ({ onPlay }) => {
   return (
     <div
       className="relative h-[95vh] bg-cover bg-center"
-      style={{ backgroundImage: "url('/hero/hero.jpg')" }}
+      style={{
+        backgroundImage: `url('${import.meta.env.BASE_URL}hero/hero.jpg')`,
+      }}
     >
       {/* bottom fade into page bg */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent" />

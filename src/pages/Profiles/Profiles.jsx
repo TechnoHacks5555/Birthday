@@ -28,7 +28,7 @@ const Profiles = () => {
     <FullscreenLayout>
       {/* TODO: adjust the filename below to match whatever you have in public/logos */}
       <img
-        src="/logos/netflix-logo.png"
+        src={`${import.meta.env.BASE_URL}logos/netflix-nav-logo.svg`}
         alt="Netflix"
         className="absolute left-8 top-8 h-7 md:h-8"
         onError={(e) => {

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { X } from "lucide-react";
+import { resolveAssetPath } from "../../utils/assetPath";
 
 const VideoPlayerModal = ({ movie, onClose }) => {
   const videoRef = useRef(null);
@@ -52,7 +53,7 @@ const VideoPlayerModal = ({ movie, onClose }) => {
           extra handling needed either way. */}
       <video
         ref={videoRef}
-        src={movie.video}
+        src={resolveAssetPath(movie.video)}
         autoPlay
         controls
         className="h-full w-full object-contain"
