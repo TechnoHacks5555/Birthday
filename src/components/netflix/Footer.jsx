@@ -58,11 +58,14 @@ const Footer = () => {
         </button>
 
         <div className="mt-10 space-y-2 border-t border-gray-800 pt-6 text-xs leading-5 text-gray-500">
-          <p>
+          <p className="text-center flex justify-center items-center text-xl">
             A Netflix Original, cast of one, made entirely out of how much
-            you're loved.
+            you're loved by your friends and family. ❤️
           </p>
-          <p>© 2026 Made with love and joy by PARTH. All rights reserved, and all the love too.</p>
+          <div className="flex flex-col justify-center items-center gap-1 font-extrabold text-3xl mt-10 text-neutral-400"> 
+            <p>Made with love by PARTH.😄</p>
+            <p>©️ Aug, 2026 All rights reserved, and all the love too.❤️</p>
+          </div>
         </div>
       </div>
     </footer>
